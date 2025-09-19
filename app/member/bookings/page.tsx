@@ -8,7 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Building, Calendar, Clock, CreditCard } from "lucide-react"
 
 export default async function MemberBookingsPage() {
-  const supabase = createClient()
+  const supabase = await createClient()
 
   const {
     data: { user },

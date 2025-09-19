@@ -10,7 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Users, UserPlus, Search, Filter } from "lucide-react"
 
 export default async function AdminMembersPage() {
-  const supabase = createClient()
+  const supabase = await createClient()
 
   const {
     data: { user },

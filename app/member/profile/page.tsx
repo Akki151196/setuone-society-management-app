@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge"
 import { Phone, Mail, MapPin, Shield, Calendar } from "lucide-react"
 
 export default async function MemberProfilePage() {
-  const supabase = createClient()
+  const supabase = await createClient()
 
   const {
     data: { user },

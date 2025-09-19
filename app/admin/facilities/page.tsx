@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Building, Calendar, IndianRupee, Users, Plus } from "lucide-react"
 
 export default async function AdminFacilitiesPage() {
-  const supabase = createClient()
+  const supabase = await createClient()
 
   const {
     data: { user },
