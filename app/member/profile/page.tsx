@@ -1,5 +1,4 @@
 import { redirect } from "next/navigation"
-import { cookies } from "next/headers"
 import { createClient } from "@/lib/supabase/server"
 import { DashboardLayout } from "@/components/dashboard/dashboard-layout"
 import { ProfileForm } from "@/components/members/profile-form"
@@ -9,8 +8,7 @@ import { Badge } from "@/components/ui/badge"
 import { Phone, Mail, MapPin, Shield, Calendar } from "lucide-react"
 
 export default async function MemberProfilePage() {
-  const cookieStore = cookies()
-  const supabase = createClient(cookieStore)
+  const supabase = createClient()
 
   const {
     data: { user },
