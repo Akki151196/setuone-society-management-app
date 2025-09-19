@@ -8,7 +8,7 @@ import { Calendar, CreditCard, UserCheck, Wrench, Building, MessageSquare, Alert
 import Link from "next/link"
 
 export default async function MemberDashboard() {
-  const supabase = await createClient()
+  const supabase = createClient()
 
   const {
     data: { user },

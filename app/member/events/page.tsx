@@ -8,7 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Calendar, Users, Ticket, Clock } from "lucide-react"
 
 export default async function MemberEventsPage() {
-  const supabase = await createClient()
+  const supabase = createClient()
 
   const {
     data: { user },
