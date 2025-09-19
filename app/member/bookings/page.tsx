@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation"
+import { cookies } from "next/headers"
 import { createClient } from "@/lib/supabase/server"
 import { DashboardLayout } from "@/components/dashboard/dashboard-layout"
 import { FacilityGrid } from "@/components/bookings/facility-grid"
@@ -8,7 +9,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Building, Calendar, Clock, CreditCard } from "lucide-react"
 
 export default async function MemberBookingsPage() {
-  const supabase = createClient()
+  const cookieStore = cookies()
+  const supabase = createClient(cookieStore)
 
   const {
     data: { user },

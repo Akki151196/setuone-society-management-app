@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation"
+import { cookies } from "next/headers"
 import { createClient } from "@/lib/supabase/server"
 import { DashboardLayout } from "@/components/dashboard/dashboard-layout"
 import { FacilitiesTable } from "@/components/facilities/facilities-table"
@@ -8,7 +9,8 @@ import { Button } from "@/components/ui/button"
 import { Building, Calendar, IndianRupee, Users, Plus } from "lucide-react"
 
 export default async function AdminFacilitiesPage() {
-  const supabase = createClient()
+  const cookieStore = cookies()
+  const supabase = createClient(cookieStore)
 
   const {
     data: { user },
