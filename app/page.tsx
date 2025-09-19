@@ -1,8 +1,10 @@
 import { redirect } from "next/navigation"
+import { cookies } from "next/headers"
 import { createClient } from "@/lib/supabase/server"
 
 export default async function HomePage() {
-  const supabase = await createClient()
+  const cookieStore = cookies()
+  const supabase = await createClient(cookieStore)
 
   const {
     data: { user },
